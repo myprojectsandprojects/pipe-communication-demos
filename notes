@@ -1,0 +1,18 @@
+
+- reverse-search from the end of the buffer for "info multipv 1"
+- forward-search for "score cp" and take the word that immediately follows this string, thats the evaluation score of the move.
+- forward-search for "pv" and take the word that immediately follows this string, thats the move itself
+- do the last two steps in a loop until there is no "score cp" remaining
+- store scores and moves in two arrays, or in an array of structs
+- then construct the final output by iterating over both arrays and concatenating:
+	score + whitespace + move + '\n'
+
+---
+
+is there a better way to do this?
+
+- first figure out where the lines are
+	- an array of indexes/pointers that store positions of '\n'
+	- a 2 dimensional array of words somehow: [lines][words]
+- then iterate over the lines
+- for each line iterate over the words and pick the ones we are interested in

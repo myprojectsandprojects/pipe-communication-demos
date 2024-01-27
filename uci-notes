@@ -1,0 +1,7 @@
+
+position fen r1bq1rk1/p1p1bppp/np2pn2/1N1p4/3P1B2/P2BPN2/1PP2PPP/R2QK2R b KQ - 0 8
+go movetime 9000
+
+uci
+
+setoption name MultiPV value 500

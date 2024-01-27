@@ -1,0 +1,52 @@
+
+system()
+fork(), exec()
+
+---
+
+client - server
+request - response
+
+client fork/exec's a server, which is a separate executable
+using a pipe to communicate with each other
+client handles user input (commands/requests)
+
+meaning -> forty two
+[everything else] -> unknown command
+
+---
+
+client:
+
+spin_off_server_and_establish_line_of_communication()
+
+while(true) {
+	command = read_command_from_user()
+	if(command == quit) {
+		send_quit_command()
+		break
+	}
+
+	response = send_command(command)
+	display_response(response)
+}
+
+cleanup()
+
+
+server:
+
+initialize()
+
+while(true) {
+	command = read_command_from_client()
+	if(command == quit) {
+		break
+	}
+	response = generate_response()
+	send_reponse_to_client(repsonse)
+}
+
+cleanup()
+
+
